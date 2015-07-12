@@ -6,10 +6,7 @@ namespace Shiva.CameraSwitch{
 	{
 		public Camera c;
 
-		void Awake(){
-		}
-		
-		void Start ()
+		void Awake ()
 		{
 			if (c == null) {
 				c = GetComponentInChildren<Camera>();

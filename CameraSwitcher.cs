@@ -6,18 +6,31 @@ namespace Shiva.CameraSwitch{
 	{
 		
 		public SwitchableCamera[] cameras;
-		[HideInInspector]
-		public SwitchableCamera currentActive;
+//		[HideInInspector]
+		private SwitchableCamera currentActive;
+
+		public SwitchableCamera CurrentActive{
+			get{
+				if(currentActive == null){
+					Switch(cameras[0]);
+				}
+
+				return currentActive;
+			}
+		}
+
 
 		void Start ()
 		{
 			foreach (SwitchableCamera sc in cameras) {
 					sc.On(false);
 			}
-			cameras [0].On (true);
-			currentActive = cameras [0];
+			Switch (cameras [0]);
+//			cameras [0].On (true);
+//			currentActive = cameras [0];
 
 		}
+
 
 		void Update(){
 		
