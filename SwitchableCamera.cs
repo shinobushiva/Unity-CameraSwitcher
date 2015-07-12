@@ -1,36 +1,38 @@
 ﻿ using UnityEngine;
 using System.Collections;
 
-public class SwitchableCamera : MonoBehaviour
-{
-	public Camera c;
-
-	void Awake(){
-	}
-	
-	void Start ()
+namespace Shiva.CameraSwitch{
+	public class SwitchableCamera : MonoBehaviour
 	{
-		if (c == null) {
-			c = GetComponentInChildren<Camera>();
+		public Camera c;
+
+		void Awake(){
+		}
+		
+		void Start ()
+		{
+			if (c == null) {
+				c = GetComponentInChildren<Camera>();
+			}
+
+			if (c == null) {
+				print ("Could not find any camera in children. The component is destroied");
+				Destroy(this);
+			}
+
 		}
 
-		if (c == null) {
-			print ("Could not find any camera in children. The component is destroied");
-			Destroy(this);
+		public void On(bool f){
+			Behaviour[] mbs = GetComponentsInChildren<Behaviour> ();
+			foreach (Behaviour mb in mbs) {
+				if(mb == null)
+					continue;
+
+				mb.enabled = f;
+			}
+			//enabled = true;
 		}
+	 
 
 	}
-
-	public void On(bool f){
-		Behaviour[] mbs = GetComponentsInChildren<Behaviour> ();
-		foreach (Behaviour mb in mbs) {
-			if(mb == null)
-				continue;
-
-			mb.enabled = f;
-		}
-		//enabled = true;
-	}
- 
-
 }

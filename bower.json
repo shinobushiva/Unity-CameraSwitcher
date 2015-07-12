@@ -1,0 +1,23 @@
+{
+  "name": "Unity-CameraSwitcher",
+  "version": "0.1.0",
+  "homepage": "https://github.com/shinobushiva/Unity-CameraSwitcher",
+  "authors": [
+    "Shinobu Izumi <stagesp1@gmail.com>"
+  ],
+  "description": "Camera Switcher for Unity",
+  "keywords": [
+    "camera",
+    "switch",
+    "unity",
+    "unity3d"
+  ],
+   "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "license": "MIT"
+}
