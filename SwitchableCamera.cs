@@ -5,6 +5,8 @@ namespace Shiva.CameraSwitch{
 	public class SwitchableCamera : MonoBehaviour
 	{
 		public Camera c;
+		[HideInInspector]
+		public bool isMain = false;
 
 		void Awake ()
 		{

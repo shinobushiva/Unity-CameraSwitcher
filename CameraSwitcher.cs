@@ -41,10 +41,13 @@ namespace Shiva.CameraSwitch{
 			print ("Switch:" + c.gameObject);
 			currentActive = c;
 
+
 			foreach (SwitchableCamera sc in cameras) {
 				if(sc == c){
+					sc.isMain = true;
 					sc.On(true);
 				}else{
+					sc.isMain = false;
 					sc.On(false);
 				}
 			}
